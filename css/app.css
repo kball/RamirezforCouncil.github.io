@@ -33,18 +33,18 @@
   .hero .tech-img {
     background-size: cover;
 	background-color: #000080; 
-    height: 25em;
+    height: 100%;
     width: 100%;
     display: block;
 	opacity: 0.5;
     filter: alpha(opacity=50);
     margin: 0 auto; }
-  @media only screen and (min-width: 30.063em) {
+  @media only screen and (min-width: 50.063em) {
     .hero .tech-img {
-      height: 18rem;
-      width: 18rem;
-	  opacity: 0.8;
-      filter: alpha(opacity=80);	  }
+      height: 20em;
+      width: 20em;
+	  opacity: 1;
+      filter: alpha(opacity=100);	  }
     .hero h1 {
       padding-top: 4.5rem;
       text-align: right;
