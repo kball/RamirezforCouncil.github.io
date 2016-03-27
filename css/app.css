@@ -33,14 +33,18 @@
   .hero .tech-img {
     background-size: cover;
 	background-color: #000080; 
-    height: 9rem;
-    width: 9rem;
+    height: 25em;
+    width: 100%;
     display: block;
+	opacity: 0.5;
+    filter: alpha(opacity=50);
     margin: 0 auto; }
-  @media only screen and (min-width: 40.063em) {
+  @media only screen and (min-width: 30.063em) {
     .hero .tech-img {
       height: 18rem;
-      width: 18rem; }
+      width: 18rem;
+	  opacity: 0.8;
+      filter: alpha(opacity=80);	  }
     .hero h1 {
       padding-top: 4.5rem;
       text-align: right;
@@ -113,4 +117,35 @@
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+figure {
+	opacity: 1;
+    filter: alpha(opacity=100);
+	}
+	
+figcaption {
+	font-family: 'Open Sans', sans-serif;
+	}
+@media (max-width:641px) {
+	nav {
+		display: none;
+		visibility: hidden;
+	}
+	figure {
+	width: 80%;
+	}
+}
+
+@media (min-width:641px) {
+	aside {
+		display: none;
+		visibility: hidden;
+	}
+	figure {
+		width: 45%;
+		float: right
+	}
 }
