@@ -3,7 +3,7 @@
 }
 .bluebg {
 	background-size: cover; 
-background-color: #000080;}
+	background-color: #000080;}
 	.bluebg h1 {
     color: #fff;
     font-size: 1.5rem;
@@ -43,42 +43,8 @@ background-color: #000080;}
     .footer .links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
-	  
-	  .fancy.button {
-  background-color: #fff;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEFEFEF');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(73%, #f7f7f7), color-stop(100%, #efefef));
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f7f7f7 73%, #efefef 100%);
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f7f7f7 73%, #efefef 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #f7f7f7 73%, #efefef 100%);
-  background-image: linear-gradient(top, #ffffff 0%, #f7f7f7 73%, #efefef 100%);
-  border: 1px solid rgba(52, 73, 94, 0.2);
-  color: rgba(52, 152, 219, 0.7);
-  font-size: 0.75em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.fancy.button:hover {
-  color: #3498db;
-  background-color: #fff;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(73%, #efefef), color-stop(100%, #ededed));
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #efefef 73%, #ededed 100%);
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #efefef 73%, #ededed 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #efefef 73%, #ededed 100%);
-  background-image: linear-gradient(top, #ffffff 0%, #efefef 73%, #ededed 100%);
-  border-color: rgba(52, 73, 94, 0.3);
-  -webkit-box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
-  -moz-box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
-  box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
-}
-.fancy.button:active {
-  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1) inset;
-}
+
+
 p {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -91,10 +57,6 @@ figcaption {
 	font-family: 'Open Sans', sans-serif;
 	}
 @media (max-width:641px) {
-	nav {
-		display: none;
-		visibility: hidden;
-	}
 	figure {
 	width: 80%;
 	}
@@ -107,21 +69,26 @@ figcaption {
 	}
 	figure {
 		width: 45%;
-		float: right
+		float: right;
+	}
+		.logoimg {
+	max-width: 200px;
 	}
 }
+a.lucasmenu:link,
+a.lucasmenu:visited,
+a.lucasmenu:active { 
+	color: #FFFFFF; 
+	text-decoration: none;
+	vertical-align: bottom;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	}
 
-.embed-container { 
-	position: relative; 
-	padding-bottom: 71.25%; 
-	height: 0; 
-	overflow: hidden; 
-	max-width: 100%; 
-	} 
-	.embed-container iframe, .embed-container object, .embed-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
+a.lucasmenu:hover { 
+	color: #006699; 
+	text-decoration: none;
+	vertical-align: bottom;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 	}

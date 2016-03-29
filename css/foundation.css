@@ -12,7 +12,7 @@
    *    without disabling user zoom.
    */
 html {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -1676,8 +1676,8 @@ select {
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #2199e8;
-  color: #fefefe; }
+  background-color: #FFFFFF;
+  color: #000080; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
@@ -3403,7 +3403,7 @@ table.hover tr:nth-of-type(even):hover {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #e6e6e6; }
+    background-color: #000080; }
   .top-bar input {
     width: 200px;
     margin-right: 1rem; }
