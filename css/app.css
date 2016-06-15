@@ -169,8 +169,12 @@ ul li a.toggle:hover {
   text-transform: uppercase;
 }
 .left-subnav li a {
-  color: #1585cf;
+  color: #00205B;
 }
+.left-subnav .is-accordion-submenu-parent > a::after {
+  border-color: #00205B transparent transparent;
+}
+
 .left-subnav li a.heading,
 .left-subnav li a.heading.active {
   text-transform: uppercase;
@@ -181,7 +185,7 @@ ul li a.toggle:hover {
   background-color: #eee;
 }
 .left-subnav li a.active {
-  background-color: #1585cf;
+  background-color: #00205B;
   color: #fff;
 }
 
