@@ -171,10 +171,20 @@ ul li a.toggle:hover {
 .left-subnav li a {
   color: #1585cf;
 }
+.left-subnav li a.heading,
+.left-subnav li a.heading.active {
+  text-transform: uppercase;
+  color: rgb(10, 10, 10);
+  background-color: #fff;
+}
 .left-subnav li a:hover {
   background-color: #eee;
 }
 .left-subnav li a.active {
   background-color: #1585cf;
   color: #fff;
+}
+
+.left-subnav li.indent {
+  padding-left: 20px;
 }
