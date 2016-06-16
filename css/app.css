@@ -165,30 +165,30 @@ ul li a.toggle:hover {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.left-subnav li.heading {
+..vertical.menu li.heading {
   text-transform: uppercase;
 }
-.left-subnav li a {
+..vertical.menu li a {
   color: #00205B;
 }
-.left-subnav .is-accordion-submenu-parent > a::after {
+.vertical.menu .is-accordion-submenu-parent > a::after {
   border-color: #00205B transparent transparent;
 }
 
-.left-subnav li a.heading,
-.left-subnav li a.heading.active {
+.vertical.menu li a.heading,
+.vertical.menu li a.heading.active {
   text-transform: uppercase;
   color: rgb(10, 10, 10);
   background-color: #fff;
 }
-.left-subnav li a:hover {
+..vertical.menu li a:hover {
   background-color: #eee;
 }
-.left-subnav li a.active {
+.vertical.menu li a.active {
   background-color: #00205B;
   color: #fff;
 }
 
-.left-subnav li.indent {
+.vertical.menu li.indent {
   padding-left: 20px;
 }
