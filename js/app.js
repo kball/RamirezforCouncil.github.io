@@ -1,23 +1,23 @@
 $(document).foundation();
 
+
 $(document).ready(function() {
-  var lastLink;
-  $('#nav-magellan').on('update.zf.magellan', function(event, link) {
-    // slightly expensive, so only fire once per change in link
-    if(link[0] !== lastLink) {
-      lastLink = link[0];
-      var menu = $(link).parents('.submenu');
-      if(!(menu.is(':visible'))) {
-        $(menu).siblings('a').click();
-      }
+  var handler = function(event) {
+    var link = $('#nav-magellan a.active');
+    var menu = $(link).parents('.submenu');
+    if(!(menu.is(':visible'))) {
+      $(menu).siblings('a').click();
     }
-  });
+  };
+  var throttledHandler = _.throttle(handler, 200);
+
+  $('#nav-magellan').on('update.zf.magellan', throttledHandler);
 });
 $('.toggle').click(function(e) {
   	e.preventDefault();
-  
+
     var $this = $(this);
-  
+
     if ($this.next().hasClass('show')) {
         $this.next().removeClass('show');
         $this.next().slideUp(350);
