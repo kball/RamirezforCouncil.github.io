@@ -165,12 +165,6 @@ ul li a.toggle:hover {
   background: rgba(0, 0, 0, 0.9);
 }
 
-..vertical.menu li.heading {
-  text-transform: uppercase;
-}
-..vertical.menu li a {
-  color: #00205B;
-}
 .vertical.menu .is-accordion-submenu-parent > a::after {
   border-color: #00205B transparent transparent;
 }
@@ -191,4 +185,9 @@ ul li a.toggle:hover {
 
 .vertical.menu li.indent {
   padding-left: 20px;
+}
+.sticky.columns {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
 }
