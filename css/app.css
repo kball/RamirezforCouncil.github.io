@@ -2,7 +2,7 @@
   max-width: 1400px;
 }
 .bluebg {
-	background-size: cover; 
+	background-size: cover;
 	background-color: #00205B;}
 	.bluebg h1 {
     color: #fff;
@@ -68,7 +68,7 @@ figure {
 	opacity: 1;
     filter: alpha(opacity=100);
 	}
-	
+
 figcaption {
 	font-family: 'Open Sans', sans-serif;
 	}
@@ -93,16 +93,16 @@ figcaption {
 }
 a.lucasmenu:link,
 a.lucasmenu:visited,
-a.lucasmenu:active { 
-	color: #FFFFFF; 
+a.lucasmenu:active {
+	color: #FFFFFF;
 	text-decoration: none;
 	vertical-align: bottom;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	}
 
-a.lucasmenu:hover { 
-	color: #006699; 
+a.lucasmenu:hover {
+	color: #006699;
 	text-decoration: none;
 	vertical-align: bottom;
 	font-family: 'Open Sans', sans-serif;
@@ -163,4 +163,31 @@ ul li a.toggle {
 }
 ul li a.toggle:hover {
   background: rgba(0, 0, 0, 0.9);
+}
+
+.vertical.menu .is-accordion-submenu-parent > a::after {
+  border-color: #00205B transparent transparent;
+}
+
+.vertical.menu li a.heading,
+.vertical.menu li a.heading.active {
+  text-transform: uppercase;
+  color: rgb(10, 10, 10);
+  background-color: #fff;
+}
+..vertical.menu li a:hover {
+  background-color: #eee;
+}
+.vertical.menu li a.active {
+  background-color: #00205B;
+  color: #fff;
+}
+
+.vertical.menu li.indent {
+  padding-left: 20px;
+}
+.sticky.columns {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
 }
