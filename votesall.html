@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="test.css" type="text/css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+google.load("visualization", '1', {packages:['corechart']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+  var query = new google.visualization.Query(
+      'https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit?usp=sharing');
+  query.send(handleQueryResponse);
+}
+
+function handleQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+
+  var data = response.getDataTable();
+  var options = {
+      title: 'Percentage of Money Raised from Each City',
+        };
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options });
+}
+</script>
+	
+  </head>
+  <body><div id="columnchart" style="width: 900px; height: 500px;"></div>
+</div>
+  </body>
+</html>
