@@ -28,7 +28,7 @@
 		var data = response.getDataTable();
 
         // Set options for Column chart.
-        var options = {title:'Money Donated Each Day'};
+        var options = {title:'Money Donated Each Day', legend: { position: "none" },};
 
         // Instantiate and draw the chart for Column Chart.
         var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart'));
