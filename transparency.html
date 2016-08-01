@@ -42,19 +42,15 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawPieChart);
 	  google.setOnLoadCallback(drawChart);
-      function drawPieChart() {
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
-		query.setQuery('select C, sum(H) group by C');
-		query.send(handleQueryResponse);
-}
-
-function handleQueryResponse(response) {
-  if (response.isError()) {
-    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-    return;
-  }
-
-  var data = response.getDataTable();
+	  function drawPieChart() {
+  var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
 
         var options = {
           title: 'My Daily Activities'
@@ -64,6 +60,8 @@ function handleQueryResponse(response) {
 
         chart.draw(data, options);
       }
+	  
+	  
 	  function drawChart() {
 		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
 	query.send(handleQueryResponse);
