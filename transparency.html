@@ -37,7 +37,30 @@
 <meta name="msapplication-square150x150logo" content="img/mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="img/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png" />
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>
 <section class="bluebg">
@@ -64,9 +87,8 @@
     <div class="row">
       <div class="large-12 columns">
 	  <h1>Transparency</h1>
-	  <p>I am committed to transparency with my campaign. To that end, I have chosen to file my campaign finance 460 form electronically. These official filing forms are 1) freely available to be used, shared, and reused by anyone for any purpose; 2) available in digital, machine-readable formats; 3) downloadable en masse; and 4) digitally located in a centralized area that is easily found on the <a href="http://mountainview.gov/civicax/filebank/blobdload.aspx?BlobID=19981" target="_blank">city website</a>.<br><br>Continuing that commitment, this page will provide realtime monetary contribution information with data visualizations. </p>
-	  <p><iframe src="votesall.html" frameborder="0" width="900" height="500" scrolling="no" name="results"></iframe><br>
-	<a href="votesall.html" target="results">Results (Votes)</a> - <a href="percentall.html" target="results">Results (Percentage)</a> - <a href="votescl.html" target="results">Results Cory/Lydia (Votes)</a> - <a href="percentcl.html" target="results">Results Cory/Lydia (Percentage)</a><br><br>
+	  <p>I am committed to running a clean and transparent campaign. This page provides real-time monetary campaign contribution information with data visualizations. I will also post my responses to the candidate questionnaires that I will receive over the coming months. <br><br>Although not required, I am electronically filing my Form 460 campaign filing reports. Campaign filing documents can be found on the <a href="http://mountainview.gov/civicax/filebank/blobdload.aspx?BlobID=19981" target="_blank">city website</a>.</p>
+	  <p><br><div id="piechart" style="width: 900px; height: 500px;"></div><br><br>
 	Data Set can be viewed on this <a href="https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit?usp=sharing" target="_blank">spreadsheet</a>.
 	  </P>
 	  <p></p>
