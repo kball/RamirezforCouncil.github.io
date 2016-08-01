@@ -42,6 +42,10 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawPieChart);
 	  google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+	query.send(handleQueryResponse);
+}
 
 function handleQueryResponse(response) {
   if (response.isError()) {
@@ -56,9 +60,8 @@ function handleQueryResponse(response) {
   var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
   chart.draw(data, options, { legend: { position: 'bottom' } });
 }
-
 	  function drawPieChart() {
-		var data = google.visualization.arrayToDataTable([
+  var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     11],
           ['Eat',      2],
@@ -75,12 +78,6 @@ function handleQueryResponse(response) {
 
         chart.draw(data, options);
       }
-	  
-	  
-	  function drawChart() {
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
-	query.send(handleQueryResponse);
-}
     </script>
   </head>
   <body>
