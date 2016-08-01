@@ -39,46 +39,67 @@
 <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png" />
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+
+      // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawPieChart);
-	  google.setOnLoadCallback(drawChart);
-	  function drawChart() {
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
-	query.send(handleQueryResponse);
-}
 
-function handleQueryResponse(response) {
-  if (response.isError()) {
-    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-    return;
-  }
+      // Draw the pie chart for Sarah's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawSarahChart);
 
-  var data = response.getDataTable();
-  var options = {
-      title: 'Election Results (Votes)',
-        };
-  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
-  chart.draw(data, options, { legend: { position: 'bottom' } });
-}
-	  function drawPieChart() {
-  var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawAnthonyChart);
+
+      // Callback that draws the pie chart for Sarah's pizza.
+      function drawSarahChart() {
+
+        // Create the data table for Sarah's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 1],
+          ['Onions', 1],
+          ['Olives', 2],
+          ['Zucchini', 2],
+          ['Pepperoni', 1]
         ]);
 
-        var options = {
-          title: 'My Daily Activities'
-        };
+        // Set options for Sarah's pie chart.
+        var options = {title:'How Much Pizza Sarah Ate Last Night',
+                       width:400,
+                       height:300};
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+        chart.draw(data, options);
+      }
 
+      // Callback that draws the pie chart for Anthony's pizza.
+      function drawAnthonyChart() {
+
+        // Create the data table for Anthony's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 2],
+          ['Onions', 2],
+          ['Olives', 2],
+          ['Zucchini', 0],
+          ['Pepperoni', 3]
+        ]);
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'How Much Pizza Anthony Ate Last Night',
+                       width:400,
+                       height:300};
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
         chart.draw(data, options);
       }
     </script>
+ 
   </head>
   <body>
 <section class="bluebg">
@@ -106,8 +127,8 @@ function handleQueryResponse(response) {
       <div class="large-12 columns">
 	  <h1>Transparency</h1>
 	  <p>I am committed to running a clean and transparent campaign. This page provides real-time monetary campaign contribution information with data visualizations. I will also post my responses to the candidate questionnaires that I will receive over the coming months. <br><br>Although not required, I am electronically filing my Form 460 campaign filing reports. Campaign filing documents can be found on the <a href="http://mountainview.gov/civicax/filebank/blobdload.aspx?BlobID=19981" target="_blank">city website</a>.</p>
-	  <p><br><div id="piechart" style="width: 900px; height: 500px;"></div><br>
-	  <div id="columnchart" style="width: 900px; height: 500px;"></div><br>
+	  <p><br><div id="Sarah_chart_div" style="width: 900px; height: 500px;"></div><br>
+	  <div id="Anthony_chart_div" style="width: 900px; height: 500px;"></div><br>
 	Data Set can be viewed on this <a href="https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit?usp=sharing" target="_blank">spreadsheet</a>.
 	  </P>
 	  <p></p>
