@@ -40,8 +40,9 @@
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+      google.charts.setOnLoadCallback(drawPieChart);
+	  google.charts.setOnLoadCallback(drawBarChart);
+      function drawPieChart() {
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
@@ -60,6 +61,25 @@
 
         chart.draw(data, options);
       }
+	function drawChart() {
+		var query = new google.visualization.Query(
+		'https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit#gid=801569879');
+		query.send(handleQueryResponse);
+		}
+      }
+	  function handleQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+
+  var data = response.getDataTable();
+  var options = {
+      title: 'Election Results (Votes)',
+        };
+  var chart = new google.visualization.LineChart(document.getElementById('columnchart'));
+  chart.draw(data, options, { legend: { position: 'bottom' } });
+}
     </script>
   </head>
   <body>
