@@ -43,15 +43,17 @@
       google.charts.setOnLoadCallback(drawPieChart);
 	  google.setOnLoadCallback(drawChart);
       function drawPieChart() {
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit#gid=801569879');
+	query.send(handleQueryResponse);
+}
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+function handleQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+
+  var data = response.getDataTable();
 
         var options = {
           title: 'My Daily Activities'
@@ -76,7 +78,7 @@ function handleQueryResponse(response) {
   var options = {
       title: 'Election Results (Votes)',
         };
-  var chart = new google.visualization.LineChart(document.getElementById('columnchart'));
+  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
   chart.draw(data, options, { legend: { position: 'bottom' } });
 }
     </script>
