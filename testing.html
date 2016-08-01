@@ -2,30 +2,69 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+      // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+      // Draw the pie chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawPieChart);
 
-        var options = {
-          title: 'My Daily Activities'
-        };
+	  // Draw the Column chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawColumnChart);
+	  
+      // Callback that draws the pie chart.
+      function drawPieChart() {
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
+        // Create the data table Pie Chart.
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+		query.setQuery('select C, sum(H) group by C');
+		query.send(handleQueryResponse);
+		}
 
+		function handleQueryResponse(response) {
+			if (response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+			return;
+			}
+
+		var data = response.getDataTable();
+
+        // Set options for pie chart.
+        var options = {title:'Percentage of Money Donated from Each City'};
+
+        // Instantiate and draw the chart for Pie Chart.
+        var chart = new google.visualization.PieChart(document.getElementById('PieChart'));
         chart.draw(data, options);
       }
+
+      // Callback that draws the Column chart.
+      function drawColumnChart() {
+
+        // Create the data table Column Chart.
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+		query.setQuery('select A, sum(H) group by A');
+		query.send(handleQueryResponse);
+		}
+
+		function handleQueryResponse(response) {
+			if (response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+			return;
+			}
+
+		var data = response.getDataTable();
+
+        // Set options for Column chart.
+        var options = {title:'Money Donated Each Day', legend: { position: "none" },};
+
+        // Instantiate and draw the chart for Column Chart.
+        var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart'));
+        chart.draw(data, options);
+      }
+	  
     </script>
   </head>
   <body>
     <div id="piechart" style="width: 900px; height: 500px;"></div>
+	<div id="ColumnChart" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
