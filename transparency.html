@@ -48,6 +48,9 @@
 
       // Draw the column chart when Charts is loaded.
       google.charts.setOnLoadCallback(drawColumnChart);
+	  
+      // Draw the Table chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawTableChart);
 
       // Callback that draws the pie chart for Sarah's pizza.
       function drawPieChart() {
@@ -90,10 +93,33 @@
         ]);
 
         // Set options for Anthony's pie chart.
-        var options = {title:'How Much Pizza Anthony Ate Last Night'};
+        var options = {title:'Donated Amount per Day'};
 
         // Instantiate and draw the chart for Anthony's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+        chart.draw(data, options);
+      }
+	  
+	      // Callback that draws Table.
+      function drawTableChart() {
+
+        // Create the data table for Anthony's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 2],
+          ['Onions', 2],
+          ['Olives', 2],
+          ['Zucchini', 0],
+          ['Pepperoni', 3]
+        ]);
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'Top 10 Donors'};
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('TableChart'));
         chart.draw(data, options);
       }
     </script>
@@ -126,7 +152,8 @@
 	  <h1>Transparency</h1>
 	  <p>I am committed to running a clean and transparent campaign. This page provides real-time monetary campaign contribution information with data visualizations. I will also post my responses to the candidate questionnaires that I will receive over the coming months. <br><br>Although not required, I am electronically filing my Form 460 campaign filing reports. Campaign filing documents can be found on the <a href="http://mountainview.gov/civicax/filebank/blobdload.aspx?BlobID=19981" target="_blank">city website</a>.</p>
 	  <p><br><div id="PieChart" style="width: 900px; height: 500px;"></div><br>
-	  <div id="Anthony_chart_div" style="width: 900px; height: 500px;"></div><br>
+	  <div id="Anthony_chart_div" style="width: 900px; height: 500px;"></div>
+	  <div id="TableChart" style="width: 900px; height: 500px;"></div><br>
 	Data Set can be viewed on this <a href="https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit?usp=sharing" target="_blank">spreadsheet</a>.
 	  </P>
 	  <p></p>
