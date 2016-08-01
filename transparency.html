@@ -43,8 +43,9 @@
       google.charts.setOnLoadCallback(drawPieChart);
 	  google.setOnLoadCallback(drawChart);
       function drawPieChart() {
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit#gid=801569879');
-	query.send(handleQueryResponse);
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+		query.setQuery('select C, sum(H) group by C');
+		query.send(handleQueryResponse);
 }
 
 function handleQueryResponse(response) {
@@ -64,7 +65,7 @@ function handleQueryResponse(response) {
         chart.draw(data, options);
       }
 	  function drawChart() {
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1GxTnn3ffNSUJ_O2zr-NOPWjv7Ox3M15zBDk7Rc-14ZY/edit#gid=801569879');
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
 	query.send(handleQueryResponse);
 }
 
