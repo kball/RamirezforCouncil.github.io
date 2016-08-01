@@ -7,13 +7,13 @@
       // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
-      // Draw the pie chart when Charts is loaded.
-      google.charts.setOnLoadCallback(drawPieChart);
+      // Draw the Column chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawColumnChart);
 
-      // Callback that draws the pie chart for Sarah's pizza.
-      function drawPieChart() {
+      // Callback that draws the Column chart.
+      function drawColumnChart() {
 
-        // Create the data table Pie Chart.
+        // Create the data table Column Chart.
 		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
 		query.setQuery('select C, sum(H) group by C');
 		query.send(handleQueryResponse);
@@ -27,18 +27,18 @@
 
 		var data = response.getDataTable();
 
-        // Set options for pie chart.
-        var options = {title:'Percentage of Money Donated from Each City'};
+        // Set options for Column chart.
+        var options = {title:'Money Donated from Each City'};
 
-        // Instantiate and draw the chart for Pie Chart.
-        var chart = new google.visualization.PieChart(document.getElementById('PieChart'));
+        // Instantiate and draw the chart for Column Chart.
+        var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart'));
         chart.draw(data, options);
       }
 
     </script>
 	
   </head>
-  <div id="PieChart" style="width: 900px; height: 500px;"></div>
+  <div id="ColumnChart" style="width: 900px; height: 500px;"></div>
 </div>
   </body>
 </html>
