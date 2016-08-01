@@ -12,18 +12,17 @@
       function drawColumnChart() {
 
         // Create the data table for Anthony's pizza.
-		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
-		query.setQuery('select A, sum(H) group by A');
-		query.send(handleQueryResponse);
-		}
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 2],
+          ['Onions', 2],
+          ['Olives', 2],
+          ['Zucchini', 0],
+          ['Pepperoni', 3]
+        ]);
 
-		function handleQueryResponse(response) {
-			if (response.isError()) {
-			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-			return;
-			}
-
-		var data = response.getDataTable();
 
         // Set options for Anthony's pie chart.
         var options = {title:'Donated Amount per Day'};
