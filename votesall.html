@@ -4,25 +4,34 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script type="text/javascript">
 google.load("visualization", '1', {packages:['corechart']});
-google.setOnLoadCallback(drawChart);
-function drawChart() {
-  var query = new google.visualization.Query(
-      'https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit?usp=sharing');
-  query.send(handleQueryResponse);
-}
 
-function handleQueryResponse(response) {
-  if (response.isError()) {
-    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-    return;
-  }
+      // Draw the column chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawColumnChart);
+	  
+      // Callback that draws the Column Chart.
+      function drawColumnChart() {
 
-  var data = response.getDataTable();
-  var options = {
-      title: 'Percentage of Money Raised from Each City',
-        };
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options });
+        // Create the data table for Anthony's pizza.
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+		query.setQuery('select A, sum(H) group by A');
+		query.send(handleQueryResponse);
+		}
+
+		function handleQueryResponse(response) {
+			if (response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+			return;
+			}
+
+		var data = response.getDataTable();
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'Donated Amount per Day'};
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart'));
+        chart.draw(data, options);
+      }
 }
 </script>
 	
