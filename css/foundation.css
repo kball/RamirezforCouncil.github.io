@@ -2126,7 +2126,7 @@ select {
   font-weight: bold;
   color: white;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 14pt;
+  font-size: 1.125rem;
   line-height: 1;
   padding-top: 0;
   padding-bottom: 0;
@@ -3393,7 +3393,8 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar {
   padding: 0.5rem; 
   color: white;
-  font-family: 'Ubuntu', sans-serif;}
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;}
   .top-bar::before, .top-bar::after {
     content: ' ';
     display: table;
@@ -3409,6 +3410,7 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar ul {
     color: white;
 	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.125rem;
 	background-color: #00205B; }
   .top-bar input {
     width: 200px;
