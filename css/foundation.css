@@ -2118,7 +2118,8 @@ select {
       display: block;
       margin: 0 auto 0.25rem; }
   .menu.nested {
-    margin-left: 1rem; }
+    color: #00205B;
+	margin-left: 1rem; }
   .menu .active > a {
     color: #fefefe;
     background: #2199e8; }
