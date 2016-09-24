@@ -94,7 +94,6 @@ figcaption {
 a.lucasmenu:link,
 a.lucasmenu:visited,
 a.lucasmenu:active {
-	color: #FFFFFF;
 	text-decoration: none;
 	vertical-align: bottom;
 	font-family: 'Ubuntu', sans-serif;
@@ -133,7 +132,7 @@ p {
   color: #333;
 }
 .accordion h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 2.5em;
 }
@@ -180,7 +179,6 @@ ul li a.toggle:hover {
 }
 .vertical.menu li a.active {
   background-color: #00205B;
-  color: #fff;
 }
 
 .vertical.menu li.indent {
