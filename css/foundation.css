@@ -12,7 +12,7 @@
    *    without disabling user zoom.
    */
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -3407,7 +3407,9 @@ table.hover tr:nth-of-type(even):hover {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #00205B; }
+    color: white;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #00205B; }
   .top-bar input {
     width: 200px;
     margin-right: 1rem; }

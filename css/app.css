@@ -62,7 +62,7 @@
 
 
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 figure {
 	opacity: 1;
@@ -70,7 +70,7 @@ figure {
 	}
 
 figcaption {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	}
 @media (max-width:641px) {
 	figure {
@@ -97,7 +97,7 @@ a.lucasmenu:active {
 	color: #FFFFFF;
 	text-decoration: none;
 	vertical-align: bottom;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	}
 
@@ -105,13 +105,13 @@ a.lucasmenu:hover {
 	color: #006699;
 	text-decoration: none;
 	vertical-align: bottom;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	}
 
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
 }
 a {
