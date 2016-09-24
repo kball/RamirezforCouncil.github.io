@@ -2047,7 +2047,8 @@ select {
 
 .menu {
   margin: 0;
-  list-style-type: none; }
+  list-style-type: none;
+  color: #fff;}
   .menu > li {
     display: table-cell;
     vertical-align: middle; }
@@ -2056,11 +2057,12 @@ select {
   .menu > li > a {
     display: block;
     padding: 0.7rem 1rem;
-    line-height: 1; }
+    line-height: 1;	}
   .menu input,
   .menu a,
   .menu button {
-    margin-bottom: 0; }
+    margin-bottom: 0;	
+	color: #fff;}
   .menu > li > a img,
   .menu > li > a i {
     vertical-align: middle; }
@@ -2069,7 +2071,7 @@ select {
     vertical-align: middle; }
   .menu > li > a img,
   .menu > li > a i {
-    margin-right: 0.25rem;
+    margin-right: 0.30rem;
     display: inline-block; }
   .menu > li {
     display: table-cell; }
@@ -2124,7 +2126,7 @@ select {
 
 .menu-text {
   font-weight: bold;
-  color: white;
+  color: #fff;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.125rem;
   line-height: 1;
