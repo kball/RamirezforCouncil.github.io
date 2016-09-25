@@ -28,6 +28,39 @@
   ga('send', 'pageview');
 
 </script>
+<script type="text/javascript">
+      // Load Charts and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Draw the pie chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawPieChart);
+
+      // Callback that draws the pie chart.
+      function drawPieChart() {
+
+        // Create the data table Pie Chart.
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
+		query.setQuery('select C, sum(H) group by C');
+		query.send(handleQueryResponse);
+		}
+
+		function handleQueryResponse(response) {
+			if (response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+			return;
+			}
+
+		var data = response.getDataTable();
+
+        // Set options for pie chart.
+        var options = {title:'Percentage of Money Donated from Each City'};
+
+        // Instantiate and draw the chart for Pie Chart.
+        var chart = new google.visualization.PieChart(document.getElementById('PieChart'));
+         chart.draw(data, options);
+       }
+ 
+    </script>
   </head>
   <body>
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
