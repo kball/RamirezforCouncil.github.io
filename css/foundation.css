@@ -2275,7 +2275,8 @@ select {
 .dropdown.menu > li.is-dropdown-submenu-parent > a {
   padding-right: 1.5rem;
   position: relative;
-  color: #fff;  }
+  color: #fff;
+  font-weight: bold; }
 
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
   content: '';
