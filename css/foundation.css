@@ -2060,8 +2060,7 @@ select {
   .menu input,
   .menu a,
   .menu button {
-    margin-bottom: 0;	
-	color: #fff;}
+    margin-bottom: 0;}
   .menu > li > a img,
   .menu > li > a i {
     vertical-align: middle; }
@@ -2126,7 +2125,6 @@ select {
 
 .menu-text {
   font-weight: bold;
-  color: #fff;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.125rem;
   line-height: 1;
