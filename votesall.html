@@ -15,7 +15,7 @@
 
         // Create the data table Column Chart.
 		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1m9YfmVp1PbaMe6Cl-KhfFMGNJcEEMfgOvczgqojizPw/edit#gid=0');
-		query.setQuery('select A, sum(H) group by A');
+		query.setQuery('select A, sum(H) group by A label sum(H) "Amount"');
 		query.send(handleQueryResponse);
 		}
 
@@ -28,11 +28,16 @@
 		var data = response.getDataTable();
 
         // Set options for Column chart.
-        var options = {title:'Money Donated Each Day', legend: { position: "none" },};
+        var options = {title:'Money Donated Each Day', legend: { position: "none" }, vAxis: { format:'currency'}};
 
         // Instantiate and draw the chart for Column Chart.
         var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart'));
+				//Create Formatter
+		var formatter = new google.visualization.NumberFormat(
+    {prefix: '$'});
+	formatter.format(data, 1); // Apply formatter to second column
         chart.draw(data, options);
+		
       }
 
     </script>
