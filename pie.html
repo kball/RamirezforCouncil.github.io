@@ -27,7 +27,7 @@
 		var data = response.getDataTable();
 
         // Set options for pie chart.
-        var options = {title:'Percentage of Money Donated from Each City'};
+        var options = {title:'Percentage of Money Donated from Each City', legend: 'none', pieSliceText: 'label'};
 
         // Instantiate and draw the chart for Pie Chart.
         var chart = new google.visualization.PieChart(document.getElementById('PieChart'));
