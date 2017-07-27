@@ -1,4 +1,4 @@
-{
+campaigndata_callback({
   "type": "FeatureCollection",
   "features": [
     {
@@ -786,4 +786,4 @@
       }
     }
   ]
-}
+});
