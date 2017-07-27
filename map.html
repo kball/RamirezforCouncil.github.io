@@ -21,7 +21,7 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 11,
           center: {lat: 37.4037987, lng: -122.1513075},
           mapTypeId: 'terrain'
         });
@@ -31,7 +31,7 @@
 
         // This example uses a local copy of the GeoJSON stored at
         // 
-        script.src = 'data.js';
+        script.src = 'campaigndata.js';
         document.getElementsByTagName('head')[0].appendChild(script);
 
         map.data.setStyle(function(feature) {
