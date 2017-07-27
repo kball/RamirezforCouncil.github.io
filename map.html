@@ -30,7 +30,6 @@
         var script = document.createElement('script');
 
         // This example uses a local copy of the GeoJSON stored at
-        // 
         script.src = 'campaigndata.js';
         document.getElementsByTagName('head')[0].appendChild(script);
 
@@ -47,7 +46,7 @@
           path: google.maps.SymbolPath.CIRCLE,
           fillColor: 'red',
           fillOpacity: .2,
-          scale: Math.pow(2, donated) / 2,
+          scale: Math.pow(2, donated) / 10,
           strokeColor: 'white',
           strokeWeight: .5
         };
