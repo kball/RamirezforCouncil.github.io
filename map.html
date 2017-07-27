@@ -33,28 +33,24 @@
         script.src = 'campaigndata.js';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-        map.data.setStyle(function(feature) {
-          var donated = feature.getProperty('Amount');
-          return {
-            icon: getCircle(donated)
-          };
-        });
-      }
-
-      function getCircle(donated) {
-        return {
-          path: google.maps.SymbolPath.CIRCLE,
-          fillColor: 'red',
-          fillOpacity: .2,
-          scale: donated/50,
-          strokeColor: 'white',
-          strokeWeight: .5
-        };
-      }
-
-      function campaigndata_callback(results) {
-        map.data.addGeoJson(results);
-      }
+   function campaigndata_callback(results) {
+    var heatmapData = [];
+    for (var i = 0; i &lt; results.features.length; i++) {
+      var coords = results.features[i].geometry.coordinates;
+      var latLng = new google.maps.LatLng(coords[1], coords[0]);
+      var magnitude = results.features[i].properties.Amount;
+      var weightedLoc = {
+        location: latLng,
+        weight: Math.pow(2, magnitude)
+      };
+      heatmapData.push(weightedLoc);
+    }
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData,
+      dissipating: false,
+      map: map
+    });
+  }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChM4TAvu0bCYbiMfbi6Rz0ZbhV6EgJr8U&callback=initMap">
